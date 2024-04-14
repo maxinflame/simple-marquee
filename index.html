@@ -6,7 +6,9 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="marquee"></div>
+  <div id="marquee" class="simple-marquee">
+    <span class="simple-marquee-content">Lorem am quasi.</span>
+  </div>
 
   
   <script src="dist/simple-marquee.min.js"></script>
@@ -14,5 +16,18 @@
   <script>
     SimpleMarquee.create('#marquee')
   </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .simple-marquee-content {
+      white-space: nowrap;
+    }
+  </style>
 </body>
 </html>
