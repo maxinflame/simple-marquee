@@ -4,6 +4,7 @@
 
 import { getNode } from "./modules/getNode";
 import { createCopies } from "./modules/createCopies";
+import setWrapperStyles from "./modules/setWrapperStyles";
 
 class SimpleMarquee {
   constructor(node, options) {
@@ -14,12 +15,8 @@ class SimpleMarquee {
   }
 
   _init() {
-    this._wrapper.style.overflow = 'hidden';
-    this._wrapper.style.position = 'relative';
-    this._wrapper.style.width = '100%'
-    this._wrapper.style.height = `${this._wrapper.offsetHeight}px`;
+    setWrapperStyles(this._wrapper);
 
-    this._wrapper.innerHTML = '';
     this._copies.forEach(copy => {
       this._wrapper.appendChild(copy.node)
       copy.setOnPosition();
