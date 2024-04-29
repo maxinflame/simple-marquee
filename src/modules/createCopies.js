@@ -1,18 +1,20 @@
 class Copy {
   constructor(content) {
-    this.node = content.cloneNode(true)
+    this.node = content.cloneNode(true);
+    this.prev = null;
   }
 
   setOnPosition() {
     this.node.style.position = 'absolute';
     this.node.style.top = '0px';
 
-    if (this.prev.node.offsetWidth) {
-      const prev = this.prev.node;
-      this.node.style.left = `${Number(window.getComputedStyle(prev).left.match(/\d+/)[0]) + prev.offsetWidth}px`;
+    if (this.prev) {
+      this.left = this.prev.left + this.prev.node.offsetWidth;
     } else {
-      this.node.style.left = '0px';
+      this.left = 0;
     }
+
+    this.node.style.left = `${this.left}px`
   }
 }
 
@@ -25,8 +27,6 @@ const createCopies = (wrapper, content) => {
     if (i !== 0) copy.prev = copies[i - 1];
     copies.push(copy)
   }
-
-  copies[0].prev = copies[numOfCopies - 1];
 
   return copies
 } 

@@ -21,6 +21,9 @@ class SimpleMarquee {
       this._wrapper.appendChild(copy.node)
       copy.setOnPosition();
     })
+
+    setInterval(() => {
+    }, 40)
   }
 }
 
