@@ -6,27 +6,57 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="marquee" class="simple-marquee">
-    <span class="simple-marquee-content">Lorem am quasi.</span>
-  </div>
+  <div class="simple-marquee-wrapper">
+    <div id="marquee-img" class="simple-marquee">
+      <div
+        class="simple-marquee-content img-wrapper"
+      >
+        <img src="https://cdnn21.img.ria.ru/images/07e8/01/0f/1921486971_78:0:1411:1000_1920x0_80_0_0_db4d28e67c907d242ff686548e94516a.jpg" alt="">
+        <img src="https://www.meme-arsenal.com/memes/a0cf492fe834334e66591a76729a4288.jpg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOnEl5fG7u6icOduNWX7qHxxV3-9n0riar2k-txgxBgg&s" alt="">
+      </div>
+    </div>
 
+    <div id="marquee-text" class="simple-marquee">
+      <div class="simple-marquee-content"
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    </div>
+  </div>
+  
   
   <script src="dist/simple-marquee.min.js"></script>
 
   <script>
-    SimpleMarquee.create('#marquee')
+    SimpleMarquee.create('#marquee-img')
+
+    SimpleMarquee.create('#marquee-text')
   </script>
 
   <style>
-    body {
+    body,
+    html {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
+      position: relative;
+      display: block;
     }
 
     .simple-marquee-content {
       white-space: nowrap;
+      width: min-content;
+    }
+
+    .img-wrapper {
+      display: flex;
+    }
+
+    img {
+      height: 300px;
+      width: auto;
+      display: block;
     }
   </style>
 </body>

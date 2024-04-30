@@ -22,8 +22,21 @@ class SimpleMarquee {
       copy.setOnPosition();
     })
 
-    setInterval(() => {
-    }, 40)
+
+    this._startAnimation();
+  }
+
+  _startAnimation() {
+    const copies = this._copies;
+    let prevTimestamp = performance.now();
+
+    requestAnimationFrame(function animate(timestamp) {
+      copies.forEach(copy => copy.updatePosition());
+
+      prevTimestamp = timestamp;
+
+      requestAnimationFrame(animate)
+    })
   }
 }
 
