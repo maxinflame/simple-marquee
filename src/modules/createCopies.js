@@ -16,11 +16,11 @@ class Copy {
     this.node.style.left = `${this.left}px`
   }
 
-  updatePosition() {
+  updatePosition(shift) {
     if (this.prev) {
       this.left = this.prev.left + this.prev.node.getBoundingClientRect().width;
     } else {
-      this.left -= 1;
+      this.left -= shift;
     }
 
     this.node.style.left = `${this.left}px`;

@@ -1,0 +1,3 @@
+const DEFAULT_SPEED = 50;
+
+export {DEFAULT_SPEED}

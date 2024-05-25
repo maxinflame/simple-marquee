@@ -11,9 +11,9 @@
       <div
         class="simple-marquee-content img-wrapper"
       >
-        <img src="https://cdnn21.img.ria.ru/images/07e8/01/0f/1921486971_78:0:1411:1000_1920x0_80_0_0_db4d28e67c907d242ff686548e94516a.jpg" alt="">
-        <img src="https://www.meme-arsenal.com/memes/a0cf492fe834334e66591a76729a4288.jpg">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOnEl5fG7u6icOduNWX7qHxxV3-9n0riar2k-txgxBgg&s" alt="">
+        <img src="/img/1.jpg" alt="">
+        <img src="/img/2.jpg">
+        <img src="/img/3.jpg">
       </div>
     </div>
 
@@ -23,15 +23,6 @@
     </div>
     </div>
   </div>
-  
-  
-  <script src="dist/simple-marquee.min.js"></script>
-
-  <script>
-    SimpleMarquee.create('#marquee-img')
-
-    SimpleMarquee.create('#marquee-text')
-  </script>
 
   <style>
     body,
@@ -51,6 +42,7 @@
 
     .img-wrapper {
       display: flex;
+      gap: 16px;
     }
 
     img {
@@ -59,5 +51,19 @@
       display: block;
     }
   </style>
+  
+  
+  <script src="dist/simple-marquee.min.js"></script>
+
+  <script>
+      SimpleMarquee.create('#marquee-img')
+
+
+      SimpleMarquee.create('#marquee-text', {
+        speed: 100,
+      })
+  </script>
+
+  
 </body>
 </html>
